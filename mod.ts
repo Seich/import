@@ -208,7 +208,7 @@ export async function dynamicImport(
       throw error;
     }
 
-    const base = getCallerUrl();
+    const base = new URL(import.meta.url);
     const filename = resolveModuleSpecifier(moduleName, importMap ?? {}, base);
 
     return await buildAndEvaluate({ entryPoints: [filename] }, filename);
