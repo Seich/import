@@ -109,7 +109,7 @@ const esbuildOptions: webAssemblyEsbuild.BuildOptions = {
 const AsyncFunction = async function () {}.constructor;
 
 function customPrepareStackTrace(_error: Error, callSites: CallSite[]) {
-  return callSites[2] && callSites[2].getFileName()
+  return callSites[2] && callSites[2].getFileName();
 }
 
 function getCallerUrl() {
@@ -124,6 +124,8 @@ function getCallerUrl() {
   Error.prepareStackTrace = prepareStackTrace;
 
   if (caller) {
+    console.log("!!!!!!!!!!!!!!!!");
+    console.log(caller);
     return new URL(caller);
   } else {
     return new URL(import.meta.url);
