@@ -124,8 +124,8 @@ function getCallerUrl() {
   Error.prepareStackTrace = prepareStackTrace;
 
   if (caller) {
-    if (caller.startsWith("/")) {
-      return new URL(toFileUrl(caller));
+    if (caller?.startsWith("/")) {
+      return toFileUrl(caller);
     }
     return new URL(caller);
   } else {
