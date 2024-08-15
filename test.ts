@@ -14,7 +14,7 @@ Deno.test('`importModule`', async () => {
 });
 
 Deno.test('importString', async () => {
-	console.log(await importString('export const foo = \'bar\''));
+	console.log(await importString("export const foo = 'bar'"));
 });
 
 Deno.test('importString with modules', async () => {
